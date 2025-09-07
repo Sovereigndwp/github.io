@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin from First Principles - The Complete Interactive Guide</title>
     <style>
@@ -111,7 +112,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
-            background: #2d2d5f;
+            background: #2d2d2d;
         }
 
         .principle-content.active {
@@ -120,10 +121,6 @@
 
         .principle-inner {
             padding: 30px;
-        }
-        
-        .principle-content {
-            background: #2d2d2d;
         }
 
         .problem-box {
@@ -442,6 +439,47 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #ffd700;
+        }
+        
+        /* New styles for principles 3-9 */
+        .consensus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .node {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .node.dishonest {
+            background: linear-gradient(45deg, #dc3545, #c82333);
+        }
+        
+        .ledger-demo {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .ledger-entry {
+            display: grid;
+            grid-template-columns: 100px 1fr 150px;
+            gap: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            margin: 5px 0;
+            font-size: 0.9rem;
         }
 
         /* Enhanced Mobile Optimizations */
@@ -848,6 +886,30 @@
                 <div class="principle-fill" id="progress-fill" style="width: 0%;"></div>
             </div>
             <p style="color: #cccccc; margin-top: 10px;">Each principle builds logically on the previous ones</p>
+        </div>
+
+        <!-- Course Preview Section -->
+        <div style="text-align: center; margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+            <h2 style="color: #4f46e5; margin-bottom: 15px;">🎯 What You'll Learn in This Journey</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                This comprehensive interactive guide contains 10 principles that build 
+                logically to explain how Bitcoin works from first principles.
+            </p>
+            <div class="insight-box">
+                <h3 style="color: #4f46e5; margin-bottom: 15px;">Your Learning Path:</h3>
+                <ul style="text-align: left; margin-left: 40px;">
+                    <li>The consensus problem and how strangers agree</li>
+                    <li>Proof of work and why it makes attacks expensive</li>
+                    <li>The blockchain structure and immutable history</li>
+                    <li>Digital signatures and ownership proofs</li>
+                    <li>Economic incentives that make honesty profitable</li>
+                    <li>Network effects and Bitcoin's growing strength</li>
+                    <li>Digital scarcity and true financial sovereignty</li>
+                </ul>
+            </div>
+            <p style="color: #cccccc; font-style: italic; margin-top: 15px;">
+                Each principle reveals a piece of Bitcoin's genius. Together, they show why Bitcoin is inevitable.
+            </p>
         </div>
 
         <!-- Principle 0: Why Money Fails -->
@@ -1376,7 +1438,7 @@
                             
                             <div style="margin: 20px 0;">
                                 <label for="new-tx" style="display: block; margin-bottom: 5px; color: #ffffff;">Transaction Details:</label>
-                                <input type="text" id="new-tx" placeholder="Enter transaction (e.g., &#39;Alice sends 10 BTC to Bob&#39;)" style="width: 70%; padding: 10px; border: 2px solid #4f46e5; border-radius: 5px; background: #2d2d5f; color: #ffffff; margin-right: 10px;">
+                                <input type="text" id="new-tx" placeholder="Enter transaction (e.g., 'Alice sends 10 BTC to Bob')" style="width: 70%; padding: 10px; border: 2px solid #4f46e5; border-radius: 5px; background: #2d2d5f; color: #ffffff; margin-right: 10px;">
                                 <button type="button" class="btn" onclick="addTransaction()">Add Transaction</button>
                             </div>
                             
@@ -1473,7 +1535,6 @@
                                 
                                 <button type="button" class="btn" onclick="verifySignature()">🔍 Verify Signature</button>
                                 <button type="button" class="btn" onclick="simulateInvalidSignature()" style="background: linear-gradient(45deg, #dc3545, #c82333); margin-left: 10px;">⚠️ Try Invalid Signature</button>
-                                <button type="button" class="btn" onclick="simulatePublicVerification()" style="background: linear-gradient(45deg, #17a2b8, #138496); margin-left: 10px;">Public Verification Demo</button>
                                 <div id="signature-result" style="margin-top: 15px;"></div>
                             </div>
                         </div>
@@ -1811,24 +1872,25 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin: 40px 0; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
-            <h2 style="color: #4f46e5; margin-bottom: 15px;">🎉 Congratulations!</h2>
+        <!-- Course Completion Section -->
+        <div style="text-align: center; margin: 40px 0; padding: 30px; background: rgba(40, 167, 69, 0.1); border-radius: 15px; border: 2px solid rgba(40, 167, 69, 0.3);">
+            <h2 style="color: #28a745; margin-bottom: 15px;">🎉 Congratulations! You've Mastered Bitcoin's First Principles</h2>
             <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                You've understood Bitcoin from first principles! You now know not just how Bitcoin works, 
-                but WHY it was designed the way it was. Each principle builds logically on the previous ones 
-                to create a complete monetary system.
+                You now understand the fundamental innovations that make Bitcoin revolutionary. 
+                You've seen why it's not just better money—it's inevitable money.
             </p>
             <div class="insight-box">
-                <h3 style="color: #4f46e5; margin-bottom: 15px;">The Complete Picture:</h3>
-                <p>
-                    Bitcoin solves the double-spending problem through a decentralized ledger maintained by 
-                    proof-of-work consensus, structured as an immutable chain of cryptographically-linked blocks, 
-                    secured by digital signatures, incentivized through economic rewards, and strengthened by 
-                    network effects. Every design choice serves a specific purpose in this elegant system.
-                </p>
+                <h3 style="color: #28a745; margin-bottom: 15px;">🚀 Next Steps in Your Bitcoin Journey:</h3>
+                <ul style="text-align: left; margin-left: 40px;">
+                    <li><strong>Practice:</strong> Start with small amounts and learn self-custody</li>
+                    <li><strong>Deep Dive:</strong> Read "The Bitcoin Standard" by Saifedean Ammous</li>
+                    <li><strong>Technical:</strong> Explore Bitcoin's technical documentation</li>
+                    <li><strong>Community:</strong> Join Bitcoin meetups and online communities</li>
+                    <li><strong>Build:</strong> Contribute to Bitcoin development and education</li>
+                </ul>
             </div>
-            <button type="button" class="btn btn-success" onclick="resetAllProgress()">🔄 Start Over</button>
-            <button type="button" class="btn" onclick="window.open(&#39;https://bitcoin.org/bitcoin.pdf&#39;, &#39;_blank&#39;)">📄 Read Satoshi's Original Paper</button>
+            <button type="button" class="btn btn-success" onclick="resetAllProgress()">🔄 Review Principles Again</button>
+            <button type="button" class="btn" onclick="openBitcoinPaper()">📄 Read Satoshi's Original Paper</button>
         </div>
     </div>
 
@@ -2108,29 +2170,31 @@
             if (currentOpenPrinciple && currentOpenPrinciple !== principleNum) {
                 const currentContent = document.getElementById(`content-${currentOpenPrinciple}`);
                 const currentIcon = document.getElementById(`icon-${currentOpenPrinciple}`);
-                currentContent.classList.remove('active');
-                currentIcon.textContent = '▼';
+                if (currentContent) currentContent.classList.remove('active');
+                if (currentIcon) currentIcon.textContent = '▼';
             }
             
             // Toggle current principle
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                icon.textContent = '▼';
-                currentOpenPrinciple = null;
-            } else {
-                content.classList.add('active');
-                icon.textContent = '▲';
-                currentOpenPrinciple = principleNum;
+            if (content && icon) {
+                if (content.classList.contains('active')) {
+                    content.classList.remove('active');
+                    icon.textContent = '▼';
+                    currentOpenPrinciple = null;
+                } else {
+                    content.classList.add('active');
+                    icon.textContent = '▲';
+                    currentOpenPrinciple = principleNum;
+                }
             }
         }
 
         function completePrinciple(principleNum) {
             if (principleNum > completedPrinciples) {
-                completedPrinciples = principleNum;
+                completedPrinciples = principleNum + 1;
                 updateProgress();
                 
                 // Auto-open next principle
-                if (principleNum < 8) {
+                if (principleNum < 9) {
                     setTimeout(() => {
                         togglePrinciple(principleNum + 1);
                     }, 1000);
@@ -2143,108 +2207,8 @@
             const progressText = document.getElementById('progress-text');
             const percentage = (completedPrinciples / 10) * 100;
             
-            progressFill.style.width = percentage + '%';
-            progressText.textContent = `${completedPrinciples}/10 Principles Understood`;
-        }
-
-        // Principle 0: Money Problem Demos
-        
-        // Initialize inflation slider
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('inflation-slider');
-            if (slider) {
-                slider.addEventListener('input', updateInflation);
-                updateInflation(); // Initialize
-            }
-        });
-        
-        function updateInflation() {
-            const slider = document.getElementById('inflation-slider');
-            const year = parseInt(slider.value);
-            const yearDisplay = document.getElementById('year-display');
-            const buyingPower = document.getElementById('buying-power');
-            const inflationRate = document.getElementById('inflation-rate');
-            const moneyLost = document.getElementById('money-lost');
-            
-            const currentYear = 2024 + year;
-            const annualInflation = 0.03; // 3% average
-            const realValue = 10000 * Math.pow(1 - annualInflation, year);
-            const lost = 10000 - realValue;
-            
-            yearDisplay.textContent = currentYear;
-            buyingPower.textContent = '$' + Math.round(realValue).toLocaleString();
-            inflationRate.textContent = (annualInflation * 100).toFixed(1) + '%';
-            moneyLost.textContent = '$' + Math.round(lost).toLocaleString();
-        }
-        
-        function showHistoricalExample(country) {
-            const result = document.getElementById('historical-result');
-            const examples = {
-                'venezuela': {
-                    title: 'Venezuela 2018 - Hyperinflation',
-                    story: 'Inflation reached 1,000,000%. A cup of coffee that cost 450 bolivars in 2013 cost 1 million bolivars in 2018.',
-                    lesson: 'Government money printing destroyed purchasing power overnight.'
-                },
-                'lebanon': {
-                    title: 'Lebanon 2020 - Banking Crisis', 
-                    story: 'Banks froze accounts and limited withdrawals to $200/week. People lost access to their life savings.',
-                    lesson: 'When banks fail, your "money" disappears even though you did nothing wrong.'
-                },
-                'cyprus': {
-                    title: 'Cyprus 2013 - Bank Bail-in',
-                    story: 'Government seized up to 60% of deposits over €100,000 to save failing banks.',
-                    lesson: 'Your bank account is actually an unsecured loan to the bank.'
-                },
-                'germany': {
-                    title: 'Germany 1923 - Weimar Hyperinflation',
-                    story: 'People needed wheelbarrows full of cash to buy bread. Savings were wiped out in months.',
-                    lesson: 'Even advanced economies can destroy their currency through money printing.'
-                }
-            };
-            
-            const example = examples[country];
-            result.innerHTML = `
-                <div class="insight-box">
-                    <h4 style="color: #dc3545;">${example.title}</h4>
-                    <p><strong>What Happened:</strong> ${example.story}</p>
-                    <p><strong>Key Lesson:</strong> ${example.lesson}</p>
-                </div>
-            `;
-        }
-        
-        function showControlExample(type) {
-            const result = document.getElementById('control-result');
-            const examples = {
-                'freeze': {
-                    title: 'Account Freezing',
-                    story: 'Banks can freeze your account for "suspicious activity," wrong politics, or simply technical errors.',
-                    lesson: 'You don\'t actually own the money in your bank account.'
-                },
-                'capital': {
-                    title: 'Capital Controls',
-                    story: 'Countries like Argentina and China limit how much money citizens can move or exchange.',
-                    lesson: 'Governments can trap your wealth within borders.'
-                },
-                'bail': {
-                    title: 'Bank Bail-ins',
-                    story: 'When banks fail, new laws allow them to use depositor funds instead of taxpayer bailouts.',
-                    lesson: 'Your deposits become the bank\'s emergency fund.'
-                },
-                'negative': {
-                    title: 'Negative Interest Rates',
-                    story: 'Some banks now charge you to hold your money, literally taxing savings.',
-                    lesson: 'Traditional saving is under attack by monetary policy.'
-                }
-            };
-            
-            const example = examples[type];
-            result.innerHTML = `
-                <div class="insight-box">
-                    <h4 style="color: #dc3545;">${example.title}</h4>
-                    <p><strong>Reality:</strong> ${example.story}</p>
-                    <p><strong>Key Lesson:</strong> ${example.lesson}</p>
-                </div>
-            `;
+            if (progressFill) progressFill.style.width = percentage + '%';
+            if (progressText) progressText.textContent = `${completedPrinciples}/10 Principles Understood`;
         }
 
         // Principle 1: Double-Spending Demo
@@ -2252,747 +2216,22 @@
             const result = document.getElementById('double-spend-result');
             const coin2 = document.getElementById('coin2');
             
-            coin2.style.opacity = '1';
-            coin2.style.background = '#dc3545';
+            if (coin2) {
+                coin2.style.opacity = '1';
+                coin2.style.background = '#dc3545';
+            }
             
             setTimeout(() => {
-                result.innerHTML = `
-                    <div class="problem-box">
-                        <strong>Attack Failed!</strong><br>
-                        Without a shared ledger, Bob and Charlie can't tell if Alice's coin is real or fake. 
-                        This is why we need a single source of truth that everyone can verify.
-                    </div>
-                `;
-            }, 1000);
-        }
-
-        // Principle 2: Trust Demo
-        function testTrust(trustType) {
-            const result = document.getElementById('trust-result');
-            const cards = document.querySelectorAll('.trust-card');
-            
-            // Reset all cards
-            cards.forEach(card => {
-                card.classList.remove('trusted', 'untrusted');
-            });
-            
-            const scenarios = {
-                bank: {
-                    outcome: 'untrusted',
-                    message: '🏦 Bank froze your account during a "system upgrade" that lasted 3 days. You couldn\'t access your money when you needed it most.'
-                },
-                government: {
-                    outcome: 'untrusted', 
-                    message: '🏛️ Government printed 40% more money during a crisis, reducing the value of your savings by half. Your $10,000 savings now buys what $6,000 used to buy.'
-                },
-                company: {
-                    outcome: 'untrusted',
-                    message: '🏢 Company changed their fee structure overnight, now charging 10% for transactions that used to be free.'
-                },
-                network: {
-                    outcome: 'trusted',
-                    message: '🌐 Network operated exactly as programmed. No single party could change the rules or freeze your funds.'
-                }
-            };
-            
-            const scenario = scenarios[trustType];
-            document.getElementById(`${trustType}-trust`).classList.add(scenario.outcome);
-            
-            result.innerHTML = `
-                <div class="${scenario.outcome === 'trusted' ? 'solution-box' : 'problem-box'}">
-                    ${scenario.message}
-                </div>
-            `;
-        }
-
-        // Principle 3: Consensus Demo
-        function simulateConsensus() {
-            const votes = ['Accept', 'Accept', 'Accept', 'Reject', 'Accept'];
-            const result = document.getElementById('consensus-result');
-            
-            // Show votes
-            for (let i = 1; i <= 5; i++) {
-                document.getElementById(`vote${i}`).textContent = votes[i-1];
-            }
-            
-            const acceptVotes = votes.filter(v => v === 'Accept').length;
-            const rejectVotes = votes.filter(v => v === 'Reject').length;
-            
-            setTimeout(() => {
-                result.innerHTML = `
-                    <div class="solution-box">
-                        <strong>Consensus Reached!</strong><br>
-                        Accept: ${acceptVotes} votes, Reject: ${rejectVotes} votes<br>
-                        Transaction is ACCEPTED by majority rule.<br>
-                        Even with 1 dishonest node, the honest majority prevails.
-                    </div>
-                `;
-            }, 1000);
-        }
-
-        function addMaliciousNodes() {
-            const result = document.getElementById('consensus-result');
-            
-            // Change more nodes to dishonest
-            document.getElementById('node2').classList.remove('honest');
-            document.getElementById('node2').classList.add('dishonest');
-            document.getElementById('node3').classList.remove('honest');
-            document.getElementById('node3').classList.add('dishonest');
-            
-            result.innerHTML = `
-                <div class="problem-box">
-                    <strong>Network Compromised!</strong><br>
-                    With 3 dishonest nodes out of 5, the malicious actors now control the majority. 
-                    They can reject valid transactions or approve invalid ones.<br>
-                    This is why Bitcoin needs a way to prevent easy creation of fake nodes.
-                </div>
-            `;
-        }
-
-        // Principle 4: Proof of Work Demo
-        let puzzleAttempts = 0;
-        let puzzleSolved = false;
-
-        function tryPuzzle(num) {
-            if (puzzleSolved) return;
-            
-            puzzleAttempts++;
-            const data = `Alice→Bob:1BTC|Block:${blockchainBlocks}|Time:${Date.now()}`;
-            const hash = proofOfWorkHash(data, num);
-            
-            document.getElementById(`hash${num}`).textContent = hash;
-            
-            // More realistic difficulty check - needs 4 leading zeros
-            if (hash.startsWith('0')) {
-                document.getElementById(`puzzle${num}`).classList.add('solved');
-                puzzleSolved = true;
-                
-                document.getElementById('puzzle-result').innerHTML = `
-                    <div class="solution-box">
-                        <strong>🎉 Puzzle Solved!</strong><br>
-                        <strong>Winning Nonce:</strong> ${num}<br>
-                        <strong>Winning Hash:</strong> ${hash}<br>
-                        <strong>Difficulty:</strong> 1 leading zero<br>
-                        <strong>Attempts:</strong> ${puzzleAttempts}<br><br>
-                        <em>This miner can now add their block to the chain and earn rewards!</em><br>
-                        <small>Real Bitcoin uses 19+ leading zeros! We use 1 for demo purposes.</small>
-                    </div>
-                `;
-            } else {
-                // Show the attempt result
-                const leadingZeros = hash.match(/^0*/)[0].length;
-                const resultDiv = document.getElementById('puzzle-result');
-                resultDiv.innerHTML = `
-                    <div class="insight-box">
-                        <strong>Attempt ${puzzleAttempts}:</strong> Nonce ${num} → ${hash}<br>
-                        <strong>Leading zeros:</strong> ${leadingZeros}/1 needed<br>
-                        <small>Keep trying! Need a hash starting with "0"</small>
-                    </div>
-                `;
-            }
-        }
-
-        function autoSolvePuzzle() {
-            if (puzzleSolved) return;
-            
-            const resultDiv = document.getElementById('puzzle-result');
-            resultDiv.innerHTML = `
-                <div class="insight-box">
-                    <strong>🔍 Auto-Mining in Progress...</strong><br>
-                    <div style="margin: 10px 0; background: #0f0f23; padding: 10px; border-radius: 5px; font-family: monospace;">
-                        <div id="mining-progress">Searching for valid nonce...</div>
-                    </div>
-                </div>
-            `;
-            
-            // Simulate realistic mining with progress updates
-            let attempts = 0;
-            const data = `Alice→Bob:1BTC|Block:${blockchainBlocks}|Time:${Date.now()}`;
-            const progressDiv = document.getElementById('mining-progress');
-            
-            const interval = setInterval(() => {
-                attempts++;
-                const hash = proofOfWorkHash(data, attempts);
-                
-                if (attempts % 10 === 0) {
-                    const leadingZeros = hash.match(/^0*/)[0].length;
-                    progressDiv.innerHTML = `
-                        Nonce: ${attempts} → ${hash}<br>
-                        Leading zeros: ${leadingZeros}/4 (${((leadingZeros/4)*100).toFixed(1)}%)
-                    `;
-                }
-                
-                if (hash.startsWith('0') || attempts > 2000) {
-                    clearInterval(interval);
-                    puzzleSolved = true;
-                    
-                    const finalHash = hash.startsWith('0') ? hash : proofOfWorkHash(data, attempts + Math.floor(Math.random() * 100));
-                    
-                    resultDiv.innerHTML = `
-                        <div class="solution-box">
-                            <strong>⚡ Auto-Mining Complete!</strong><br>
-                            <strong>Winning Nonce:</strong> ${hash.startsWith('0') ? attempts : attempts + Math.floor(Math.random() * 100)}<br>
-                            <strong>Total Attempts:</strong> ${attempts}<br>
-                            <strong>Winning Hash:</strong> ${finalHash.startsWith('0') ? finalHash : '0' + finalHash.substring(1)}<br>
-                            <strong>Time:</strong> ~${(attempts * 0.05).toFixed(2)} seconds<br><br>
-                            <em>Real Bitcoin mining typically requires billions of attempts!</em><br>
-                            <small>Current Bitcoin network hashrate: ~400 EH/s (400 quintillion hashes/second)</small>
-                        </div>
-                    `;
-                    
-                    // Update one of the puzzle pieces to show the solution
-                    for (let i = 1; i <= 4; i++) {
-                        const piece = document.getElementById(`puzzle${i}`);
-                        if (!piece.classList.contains('solved')) {
-                            piece.classList.add('solved');
-                            document.getElementById(`hash${i}`).textContent = finalHash.startsWith('0') ? finalHash : '0' + finalHash.substring(1);
-                            break;
-                        }
-                    }
-                }
-            }, 100); // Slower for better visualization
-        }
-
-        function resetPuzzle() {
-            puzzleAttempts = 0;
-            puzzleSolved = false;
-            
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`puzzle${i}`).classList.remove('solved');
-                document.getElementById(`hash${i}`).textContent = 'Click to hash';
-            }
-            
-            document.getElementById('puzzle-result').innerHTML = '';
-        }
-
-        // Principle 5: Blockchain Demo
-        function parseTransaction(txString) {
-            // Parse format: "Alice sends 10 BTC to Bob"
-            const regex = /(\w+)\s+sends?\s+(\d+(?:\.\d+)?)\s+BTC\s+to\s+(\w+)/i;
-            const match = txString.match(regex);
-            
-            if (!match) {
-                return null;
-            }
-            
-            return {
-                from: match[1],
-                amount: parseFloat(match[2]),
-                to: match[3],
-                original: txString
-            };
-        }
-        
-        function calculateBalance(person) {
-            if (!utxoSet[person]) return 0;
-            return utxoSet[person].reduce((sum, utxo) => sum + utxo.amount, 0);
-        }
-        
-        function validateTransaction(tx) {
-            // Check if sender has enough balance
-            const balance = calculateBalance(tx.from);
-            
-            if (balance < tx.amount) {
-                return {
-                    valid: false,
-                    error: `❌ NOT ENOUGH MONEY: ${tx.from} only has ${balance} BTC but tried to send ${tx.amount} BTC. Transaction rejected!`,
-                    type: 'insufficient_funds'
-                };
-            }
-            
-            if (tx.amount <= 0) {
-                return {
-                    valid: false,
-                    error: `❌ INVALID AMOUNT: Cannot send ${tx.amount} BTC. Amount must be positive.`,
-                    type: 'invalid_amount'
-                };
-            }
-            
-            return { valid: true };
-        }
-        
-        function executeTransaction(tx) {
-            // Find UTXOs to spend (simplified - just use all of them)
-            const senderUTXOs = utxoSet[tx.from] || [];
-            let totalInput = 0;
-            
-            // Calculate total available
-            senderUTXOs.forEach(utxo => {
-                totalInput += utxo.amount;
-            });
-            
-            // Clear sender's UTXOs
-            utxoSet[tx.from] = [];
-            
-            // Create new UTXO for recipient
-            if (!utxoSet[tx.to]) utxoSet[tx.to] = [];
-            utxoSet[tx.to].push({
-                amount: tx.amount,
-                txid: `tx_${blockchainBlocks}`,
-                output: 0
-            });
-            
-            // Create change UTXO if needed
-            const change = totalInput - tx.amount;
-            if (change > 0) {
-                utxoSet[tx.from].push({
-                    amount: change,
-                    txid: `tx_${blockchainBlocks}`,
-                    output: 1
-                });
-            }
-        }
-        
-        function updateBalanceDisplay() {
-            const ledgerEntries = document.getElementById('ledger-entries');
-            
-            // Create balance summary
-            let balanceHtml = `
-                <div class="ledger-entry" style="background: #ff8c00; color: black; font-weight: bold;">
-                    <div class="entry-time">CURRENT BALANCES</div>
-                    <div class="entry-tx">UTXO Summary</div>
-                    <div class="entry-balance">Updated</div>
-                </div>
-            `;
-            
-            ['Alice', 'Bob', 'Charlie', 'Dave'].forEach(person => {
-                const balance = calculateBalance(person);
-                const utxos = utxoSet[person] || [];
-                if (balance > 0 || person === 'Alice') {
-                    balanceHtml += `
-                        <div class="ledger-entry">
-                            <div class="entry-time">${person}</div>
-                            <div class="entry-tx">${utxos.length} UTXOs</div>
-                            <div class="entry-balance">${balance} BTC</div>
+                if (result) {
+                    result.innerHTML = `
+                        <div class="problem-box">
+                            <strong>Attack Failed!</strong><br>
+                            Without a shared ledger, Bob and Charlie can't tell if Alice's coin is real or fake. 
+                            This is why we need a single source of truth that everyone can verify.
                         </div>
                     `;
                 }
-            });
-            
-            ledgerEntries.innerHTML = balanceHtml;
-        }
-        
-        function addTransaction() {
-            const txInput = document.getElementById('new-tx');
-            const transaction = txInput.value.trim();
-            
-            if (!transaction) {
-                showError('Please enter a transaction before adding to the blockchain.');
-                return;
-            }
-            
-            // Parse the transaction
-            const tx = parseTransaction(transaction);
-            if (!tx) {
-                showError('Invalid transaction format. Use: "Alice sends 10 BTC to Bob"');
-                return;
-            }
-            
-            // Validate the transaction
-            const validation = validateTransaction(tx);
-            if (!validation.valid) {
-                showError(validation.error);
-                
-                // Show educational explanation in simple terms
-                if (validation.type === 'insufficient_funds') {
-                    setTimeout(() => {
-                        document.getElementById('tamper-result').innerHTML = `
-                            <div class="insight-box">
-                                <strong>💡 Why This Transaction Failed:</strong><br><br>
-                                <strong>Think of Bitcoin like physical coins in your wallet.</strong><br>
-                                You can only spend the exact coins you have - no more!<br><br>
-                                
-                                <strong>Current Money:</strong><br>
-                                ${Object.entries(utxoSet).map(([person, utxos]) => {
-                                    if (utxos.length === 0) return '';
-                                    return `• ${person}: ${utxos.map(u => `${u.amount} BTC`).join(', ')}`;
-                                }).filter(Boolean).join('<br>')}<br><br>
-                                
-                                <strong>The Rule:</strong> You cannot spend money you don't have.<br>
-                                <strong>What Happened:</strong> ${tx.from} tried to send ${tx.amount} BTC but only has ${calculateBalance(tx.from)} BTC available.
-                            </div>
-                        `;
-                    }, 1000);
-                }
-                return;
-            }
-            
-            // Execute the transaction
-            executeTransaction(tx);
-            blockchainBlocks++;
-            
-            // Update the display
-            updateBalanceDisplay();
-            
-            // Add to chain visual
-            const chainVisual = document.getElementById('chain-visual');
-            const newBlock = document.createElement('div');
-            newBlock.className = 'block';
-            newBlock.style.opacity = '0';
-            newBlock.style.transform = 'scale(0.8)';
-            newBlock.innerHTML = `
-                <div><strong>Block ${blockchainBlocks - 1}</strong></div>
-                <div style="font-size: 0.8rem;">${tx.from}→${tx.to}: ${tx.amount} BTC</div>
-                <div style="color: #ff8c00; font-size: 0.7rem;">Hash: ${simpleHash(transaction).substring(0, 6)}...</div>
-                <div style="color: #28a745; font-size: 0.7rem;">✓ Valid & Mined</div>
-            `;
-            
-            const link = document.createElement('div');
-            link.className = 'block-link';
-            link.textContent = '⛓️';
-            link.style.opacity = '0';
-            
-            chainVisual.appendChild(link);
-            chainVisual.appendChild(newBlock);
-            
-            // Animate new block
-            setTimeout(() => {
-                link.style.transition = 'opacity 0.3s ease';
-                link.style.opacity = '1';
-                newBlock.style.transition = 'all 0.5s ease';
-                newBlock.style.opacity = '1';
-                newBlock.style.transform = 'scale(1)';
-            }, 200);
-            
-            txInput.value = '';
-            showSuccess(`✅ Valid transaction! ${tx.from} sent ${tx.amount} BTC to ${tx.to}`);
-            
-            // Show educational explanation of what happened
-            setTimeout(() => {
-                document.getElementById('tamper-result').innerHTML = `
-                    <div class="solution-box">
-                        <strong>🎉 Transaction Successful!</strong><br><br>
-                        <strong>What Happened:</strong><br>
-                        1. <strong>Validation:</strong> Checked ${tx.from} has sufficient UTXOs<br>
-                        2. <strong>Inputs:</strong> Used ${tx.from}'s UTXOs (${calculateBalance(tx.from) + tx.amount} BTC)<br>
-                        3. <strong>Outputs:</strong> Created new UTXO for ${tx.to} (${tx.amount} BTC)<br>
-                        ${calculateBalance(tx.from) > 0 ? `4. <strong>Change:</strong> Created change UTXO for ${tx.from} (${calculateBalance(tx.from)} BTC)<br>` : ''}
-                        <br><strong>This is how Bitcoin prevents overspending!</strong>
-                    </div>
-                `;
             }, 1000);
-        }
-        
-        // Helper functions for better user feedback
-        function showError(message) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'problem-box';
-            errorDiv.style.position = 'fixed';
-            errorDiv.style.top = '20px';
-            errorDiv.style.right = '20px';
-            errorDiv.style.zIndex = '9999';
-            errorDiv.style.maxWidth = '300px';
-            errorDiv.innerHTML = `<strong>⚠️ Error:</strong> ${message}`;
-            
-            document.body.appendChild(errorDiv);
-            
-            setTimeout(() => {
-                errorDiv.style.opacity = '0';
-                setTimeout(() => errorDiv.remove(), 300);
-            }, 3000);
-        }
-        
-        function showSuccess(message) {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'solution-box';
-            successDiv.style.position = 'fixed';
-            successDiv.style.top = '20px';
-            successDiv.style.right = '20px';
-            successDiv.style.zIndex = '9999';
-            successDiv.style.maxWidth = '300px';
-            successDiv.innerHTML = `<strong>✓ Success:</strong> ${message}`;
-            
-            document.body.appendChild(successDiv);
-            
-            setTimeout(() => {
-                successDiv.style.opacity = '0';
-                setTimeout(() => successDiv.remove(), 300);
-            }, 2000);
-        }
-
-        function attemptTamper() {
-            const result = document.getElementById('tamper-result');
-            
-            result.innerHTML = `
-                <div class="problem-box">
-                    <strong>Tampering Detected!</strong><br>
-                    To change Block 1, you would need to:<br>
-                    1. Recalculate Block 1's hash (requires proof of work)<br>
-                    2. Recalculate Block 2's hash (it references Block 1)<br>
-                    3. Recalculate every subsequent block...<br>
-                    4. Do all this faster than honest miners are adding new blocks<br><br>
-                    This becomes exponentially harder as more blocks are added!
-                </div>
-            `;
-        }
-
-        // Principle 6: Digital Signatures Demo
-        let privateKey = '';
-        let publicKey = '';
-        let currentMessage = '';
-        let currentSignature = '';
-
-        // More realistic key generation (simulated ECDSA)
-        function generateKeyPair() {
-            // Generate a more realistic private key (256 bits)
-            privateKey = '';
-            for (let i = 0; i < 64; i++) {
-                privateKey += Math.floor(Math.random() * 16).toString(16);
-            }
-            
-            // Simulate elliptic curve point multiplication for public key
-            publicKey = '04' + simpleHash(privateKey + 'pubkey_x').padStart(64, '0').substring(0, 64) + 
-                         simpleHash(privateKey + 'pubkey_y').padStart(64, '0').substring(0, 64);
-            
-            document.getElementById('private-key').textContent = privateKey;
-            document.getElementById('public-key').textContent = publicKey;
-        }
-
-        function signMessage() {
-            const message = document.getElementById('message-to-sign').value.trim();
-            if (!message || !privateKey) {
-                document.getElementById('signature-result').innerHTML = `
-                    <div class="problem-box">
-                        <strong>Error:</strong> Please generate keys first and enter a message to sign.
-                    </div>
-                `;
-                return;
-            }
-            
-            currentMessage = message;
-            // Simulate ECDSA signature (r, s values)
-            const messageHash = simpleHash(message);
-            const r = simpleHash(messageHash + privateKey + 'r_value').substring(0, 64);
-            const s = simpleHash(messageHash + privateKey + 'r_value' + r).substring(0, 64);
-            currentSignature = r + s;
-            
-            document.getElementById('signature').textContent = currentSignature;
-            
-            // Show signature components
-            document.getElementById('signature-result').innerHTML = `
-                <div class="insight-box">
-                    <strong>✓ Message Signed!</strong><br>
-                    <strong>Message Hash:</strong> ${messageHash}<br>
-                    <strong>Signature Components:</strong><br>
-                    • r: ${r}<br>
-                    • s: ${s}<br><br>
-                    <em>In real Bitcoin, this uses ECDSA with secp256k1 curve</em>
-                </div>
-            `;
-        }
-
-        function verifySignature() {
-            if (!currentMessage || !currentSignature || !publicKey || !privateKey) {
-                document.getElementById('signature-result').innerHTML = `
-                    <div class="problem-box">
-                        <strong>Error:</strong> Please generate keys, sign a message first, then verify.
-                    </div>
-                `;
-                return;
-            }
-            
-            // Simulate signature verification process
-            const messageHash = simpleHash(currentMessage);
-            const r = currentSignature.substring(0, 64);
-            const s = currentSignature.substring(64, 128);
-            
-            // Simulate elliptic curve verification
-            const expectedR = simpleHash(messageHash + privateKey + 'r_value').substring(0, 64);
-            const isValid = (r === expectedR);
-            
-            document.getElementById('signature-result').innerHTML = `
-                <div class="${isValid ? 'solution-box' : 'problem-box'}">
-                    <strong>🔒 Signature ${isValid ? 'VALID' : 'INVALID'}!</strong><br><br>
-                    <strong>Verification Process:</strong><br>
-                    1. Hash message: <code style="font-size: 0.8rem;">${messageHash}</code><br>
-                    2. Extract r,s from signature<br>
-                    3. Use public key for verification<br>
-                    4. Result: <strong style="color: ${isValid ? '#28a745' : '#dc3545'}">${isValid ? 'VERIFIED' : 'FAILED'}</strong><br><br>
-                    ${isValid ? 
-                        '<em>✓ This proves the message was signed by the holder of the private key,<br>without revealing the private key itself!</em><br><br><small>In Bitcoin, this allows you to prove ownership of coins without exposing your private key.</small>' :
-                        '<em>✗ Invalid signature - either the message was tampered with or it wasn\'t signed by the correct private key.</em>'
-                    }
-                </div>
-            `;
-        }
-
-        // Principle 7: Economic Incentives Demo
-        function calculateProfitability() {
-            const electricityCost = parseFloat(document.getElementById('electricity-cost').value);
-            const hashRate = parseFloat(document.getElementById('hash-rate').value);
-            const blockReward = parseFloat(document.getElementById('block-reward').textContent);
-            const txFees = parseFloat(document.getElementById('tx-fees').textContent);
-            const btcPrice = parseFloat(document.getElementById('btc-price').textContent.replace('$', '').replace(',', ''));
-            
-            // Simplified calculation
-            const totalReward = blockReward + txFees;
-            const revenuePerDay = (totalReward * btcPrice * hashRate) / 1000000; // Very simplified
-            const powerConsumption = hashRate * 0.1; // kW (simplified)
-            const electricityCostPerDay = powerConsumption * 24 * electricityCost;
-            const profitPerDay = revenuePerDay - electricityCostPerDay;
-            
-            document.getElementById('profitability-result').innerHTML = `
-                <div class="${profitPerDay > 0 ? 'solution-box' : 'problem-box'}">
-                    <strong>Mining Profitability Analysis:</strong><br>
-                    Daily Revenue: $${revenuePerDay.toFixed(2)}<br>
-                    Daily Electricity Cost: $${electricityCostPerDay.toFixed(2)}<br>
-                    Daily Profit: $${profitPerDay.toFixed(2)}<br><br>
-                    ${profitPerDay > 0 ? 
-                        'Mining is profitable! This incentivizes securing the network.' :
-                        'Mining is not profitable at these rates. Miners would shut down, reducing competition and difficulty.'
-                    }
-                </div>
-            `;
-        }
-
-        // Principle 8: Network Effects Demo
-        function simulateGrowth() {
-            networkUsers *= 2;
-            networkMiners = Math.floor(networkUsers / 100);
-            networkValue *= 1.5;
-            
-            document.getElementById('users').textContent = networkUsers.toLocaleString();
-            document.getElementById('miners').textContent = networkMiners.toLocaleString();
-            document.getElementById('value').textContent = `$${Math.floor(networkValue)}`;
-            
-            let security = 'Low';
-            if (networkMiners > 100) security = 'Medium';
-            if (networkMiners > 1000) security = 'High';
-            if (networkMiners > 10000) security = 'Very High';
-            
-            document.getElementById('security').textContent = security;
-            
-            document.getElementById('growth-result').innerHTML = `
-                <div class="solution-box">
-                    <strong>Network Growth Cycle:</strong><br>
-                    More users → Higher demand → Higher price → More miners → Better security → More trust → More users<br><br>
-                    This positive feedback loop makes Bitcoin stronger over time!
-                </div>
-            `;
-        }
-
-        function resetNetwork() {
-            networkUsers = 1000;
-            networkMiners = 10;
-            networkValue = 1;
-            
-            document.getElementById('users').textContent = networkUsers.toLocaleString();
-            document.getElementById('miners').textContent = networkMiners;
-            document.getElementById('value').textContent = `$${networkValue}`;
-            document.getElementById('security').textContent = 'Low';
-            document.getElementById('growth-result').innerHTML = '';
-        }
-
-        // Principle 9: Digital Scarcity & Financial Sovereignty Demos
-        
-        // Initialize time preference slider
-        document.addEventListener('DOMContentLoaded', function() {
-            const timeSlider = document.getElementById('time-slider');
-            if (timeSlider) {
-                timeSlider.addEventListener('input', updateTimePreference);
-                updateTimePreference(); // Initialize
-            }
-        });
-        
-        function updateTimePreference() {
-            const slider = document.getElementById('time-slider');
-            const years = parseInt(slider.value);
-            const timeDisplay = document.getElementById('time-display');
-            const fiatValue = document.getElementById('fiat-value');
-            const bitcoinValue = document.getElementById('bitcoin-value');
-            
-            // 3% annual inflation for fiat
-            const inflationRate = 0.03;
-            const fiatPurchasingPower = 10000 * Math.pow(1 - inflationRate, years);
-            
-            timeDisplay.textContent = years + ' years';
-            fiatValue.textContent = '$' + Math.round(fiatPurchasingPower).toLocaleString();
-            bitcoinValue.textContent = '1 BTC'; // Bitcoin remains 1 BTC
-        }
-        
-        function showScarcityComparison(asset) {
-            const result = document.getElementById('scarcity-result');
-            const comparisons = {
-                'gold': {
-                    title: 'Bitcoin vs Gold',
-                    supply: 'Gold: ~190,000 tons exist, ~3,000 tons mined yearly',
-                    problem: 'Gold supply increases ~1.5% per year. Asteroid mining could flood supply.',
-                    bitcoin: 'Bitcoin: Exactly 21,000,000 maximum. No exceptions, no new discoveries.',
-                    winner: 'Bitcoin has provable absolute scarcity. Gold does not.'
-                },
-                'land': {
-                    title: 'Bitcoin vs Real Estate', 
-                    supply: 'Land: "They ain\'t making any more of it" - but they are (reclamation, space)',
-                    problem: 'Governments can seize land, create new land, change zoning laws.',
-                    bitcoin: 'Bitcoin: Exists in cyberspace. No government can create more or seize it easily.',
-                    winner: 'Bitcoin is scarcer and more secure than land.'
-                },
-                'art': {
-                    title: 'Bitcoin vs Fine Art',
-                    supply: 'Art: Unique pieces, but new artists emerge, forgeries exist, tastes change',
-                    problem: 'Art value is subjective and can be replicated or fall out of fashion.',
-                    bitcoin: 'Bitcoin: Mathematically scarce, impossible to counterfeit, growing adoption.',
-                    winner: 'Bitcoin scarcity is objective and verifiable. Art scarcity is subjective.'
-                },
-                'stocks': {
-                    title: 'Bitcoin vs Stocks',
-                    supply: 'Stocks: Companies can issue more shares, diluting your ownership',
-                    problem: 'Stock buybacks and splits change supply. Companies can fail or be nationalized.',
-                    bitcoin: 'Bitcoin: No CEO can dilute your holdings. Protocol enforces scarcity.',
-                    winner: 'Bitcoin cannot be diluted by corporate decisions.'
-                }
-            };
-            
-            const comparison = comparisons[asset];
-            result.innerHTML = `
-                <div class="insight-box">
-                    <h4 style="color: #ffd700;">${comparison.title}</h4>
-                    <p><strong>Traditional Asset:</strong> ${comparison.supply}</p>
-                    <p><strong>The Problem:</strong> ${comparison.problem}</p>
-                    <p><strong>Bitcoin Advantage:</strong> ${comparison.bitcoin}</p>
-                    <p><strong>Conclusion:</strong> ${comparison.winner}</p>
-                </div>
-            `;
-        }
-        
-        function showSovereigntyExample(type) {
-            const result = document.getElementById('sovereignty-result');
-            const examples = {
-                'custody': {
-                    title: 'Self-Custody = True Ownership',
-                    traditional: 'Banks hold your money. If the bank fails or freezes your account, your money is gone.',
-                    bitcoin: 'You hold your private keys = you control your Bitcoin. No third party can take it.',
-                    lesson: 'With Bitcoin, you don\'t have to trust anyone else to hold your wealth.'
-                },
-                'borders': {
-                    title: 'Cross Borders Freely',
-                    traditional: 'Wire transfers take days, cost fees, require permission, and can be blocked.',
-                    bitcoin: 'Send Bitcoin anywhere in the world in minutes for minimal fees. No one can stop you.',
-                    lesson: 'Bitcoin makes you a global citizen with borderless money.'
-                },
-                'permissionless': {
-                    title: 'No Permission Required',
-                    traditional: 'Banks can deny you accounts based on politics, credit, nationality, or arbitrary rules.',
-                    bitcoin: 'Anyone with internet can use Bitcoin. No applications, no rejections, no discrimination.',
-                    lesson: 'Bitcoin is financial inclusion for every human on Earth.'
-                },
-                'censorship': {
-                    title: 'Censorship Resistant',
-                    traditional: 'Governments can freeze accounts, block payments, and control your economic activity.',
-                    bitcoin: 'Bitcoin transactions cannot be stopped by any government or authority.',
-                    lesson: 'Bitcoin protects your economic freedom even from authoritarian regimes.'
-                }
-            };
-            
-            const example = examples[type];
-            result.innerHTML = `
-                <div class="insight-box">
-                    <h4 style="color: #28a745;">${example.title}</h4>
-                    <p><strong>Traditional System:</strong> ${example.traditional}</p>
-                    <p><strong>With Bitcoin:</strong> ${example.bitcoin}</p>
-                    <p><strong>The Power:</strong> ${example.lesson}</p>
-                </div>
-            `;
         }
 
         function resetAllProgress() {
@@ -3002,75 +2241,469 @@
             networkMiners = 10;
             networkValue = 1;
             blockchainBlocks = 1;
-            puzzleSolved = false;
-            puzzleAttempts = 0;
             
             updateProgress();
             
             // Reset all principles
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 0; i <= 9; i++) {
                 const content = document.getElementById(`content-${i}`);
                 const icon = document.getElementById(`icon-${i}`);
-                if (content) {
-                    content.classList.remove('active');
-                    icon.textContent = '▼';
-                }
-            }
-            
-            // Reset all demos
-            resetPuzzle();
-            resetNetwork();
-            
-            // Reset trust cards
-            document.querySelectorAll('.trust-card').forEach(card => {
-                card.classList.remove('trusted', 'untrusted');
-            });
-            
-            // Reset consensus nodes
-            for (let i = 1; i <= 5; i++) {
-                const node = document.getElementById(`node${i}`);
-                if (i <= 3 || i === 5) {
-                    node.classList.remove('dishonest');
-                    node.classList.add('honest');
-                }
-                document.getElementById(`vote${i}`).textContent = '?';
+                if (content) content.classList.remove('active');
+                if (icon) icon.textContent = '▼';
             }
             
             // Clear results
-            const resultDivs = ['double-spend-result', 'trust-result', 'consensus-result', 'puzzle-result', 'tamper-result', 'signature-result', 'profitability-result', 'growth-result'];
+            const resultDivs = ['double-spend-result', 'trust-result', 'consensus-result', 'puzzle-result', 'tamper-result', 'signature-result', 'profitability-result', 'growth-result', 'timeline-result', 'ledger-keeper-result', 'trust-failure-result'];
             resultDivs.forEach(id => {
                 const div = document.getElementById(id);
                 if (div) div.innerHTML = '';
             });
         }
 
-        // New interactive functions for signature learning
-        function simulateInvalidSignature() {
-            if (!currentMessage || !publicKey) {
-                document.getElementById('signature-result').innerHTML = `
-                    <div class="problem-box">
-                        <strong>Error:</strong> Please sign a message first.
-                    </div>
-                `;
-                return;
+        function openBitcoinPaper() {
+            window.open('https://bitcoin.org/bitcoin.pdf', '_blank');
+        }
+        
+        // Principle 3: Consensus functions
+        function simulateConsensus() {
+            const votes = ['Accept', 'Accept', 'Accept', 'Reject', 'Accept'];
+            const dishonest = [false, false, false, true, false];
+            
+            for (let i = 1; i <= 5; i++) {
+                const voteElement = document.getElementById(`vote${i}`);
+                if (dishonest[i-1]) {
+                    voteElement.textContent = 'Reject';
+                    voteElement.style.color = '#dc3545';
+                } else {
+                    voteElement.textContent = 'Accept';
+                    voteElement.style.color = '#28a745';
+                }
             }
             
-            const fakeSignature = simpleHash('fake' + Math.random().toString()).repeat(2);
-            
-            document.getElementById('signature-result').innerHTML = `
-                <div class="problem-box">
-                    <strong>🚫 Signature INVALID!</strong><br><br>
-                    <strong>What Happened:</strong> Someone tried to forge a signature.<br><br>
-                    <strong>Original Message:</strong> "${currentMessage}"<br>
-                    <strong>Fake Signature:</strong> ${fakeSignature.substring(0, 20)}...<br><br>
-                    <strong>Result:</strong> <span style="color: #dc3545;">FAILED ✗</span><br><br>
-                    <em>Bitcoin would reject this transaction because the signature doesn't match!</em>
+            document.getElementById('consensus-result').innerHTML = `
+                <div class="result-box" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px;">
+                    <strong>Result:</strong> Transaction ACCEPTED by majority (4/5 nodes)
+                    <br><small>Note: Even with one dishonest node, honest majority wins!</small>
                 </div>
             `;
         }
         
+        function addMaliciousNodes() {
+            document.getElementById('consensus-result').innerHTML = `
+                <div class="result-box" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px;">
+                    <strong>Problem:</strong> If we add more malicious nodes without Proof of Work, they could create millions of fake identities!
+                    <br><small>This is why we need Proof of Work (next principle)...</small>
+                </div>
+            `;
+        }
+        
+        // Principle 4: Proof of Work functions
+        function tryPuzzle(attempt) {
+            const hashes = {
+                1: 'a4b2f1e8c9d3...',
+                2: 'f7e1b3a9c2d5...',
+                3: '0000a1b2c3d4...', // This one starts with 0000
+                4: 'c8d2e1f3a9b7...'
+            };
+            
+            const hashElement = document.getElementById(`hash${attempt}`);
+            hashElement.textContent = hashes[attempt];
+            
+            const puzzlePiece = document.getElementById(`puzzle${attempt}`);
+            
+            if (attempt === 3) {
+                puzzlePiece.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+                hashElement.style.color = '#28a745';
+                document.getElementById('puzzle-result').innerHTML = `
+                    <div class="result-box" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px;">
+                        <strong>🎉 Puzzle Solved!</strong> Number 3 produces a hash starting with 0000...
+                        <br><small>This represents the computational work needed to "vote" in Bitcoin</small>
+                    </div>
+                `;
+            } else {
+                puzzlePiece.style.background = 'linear-gradient(45deg, #dc3545, #c82333)';
+                hashElement.style.color = '#dc3545';
+            }
+        }
+        
+        function autoSolvePuzzle() {
+            let attempts = 0;
+            const interval = setInterval(() => {
+                attempts++;
+                if (attempts <= 3) {
+                    tryPuzzle(attempts);
+                }
+                if (attempts >= 3) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+        
+        function resetPuzzle() {
+            for (let i = 1; i <= 4; i++) {
+                const hashElement = document.getElementById(`hash${i}`);
+                const puzzlePiece = document.getElementById(`puzzle${i}`);
+                if (hashElement) hashElement.textContent = 'Click to hash';
+                if (hashElement) hashElement.style.color = '#ffffff';
+                if (puzzlePiece) puzzlePiece.style.background = 'linear-gradient(45deg, #4f46e5, #7c3aed)';
+            }
+            const puzzleResult = document.getElementById('puzzle-result');
+            if (puzzleResult) puzzleResult.innerHTML = '';
+        }
+        
+        // Principle 5: Blockchain functions
+        let blockchainData = [
+            { id: 0, data: 'Genesis', hash: '000a1b2c...' }
+        ];
+        
+        function addTransaction() {
+            const txInput = document.getElementById('new-tx');
+            if (!txInput) return;
+            const transaction = txInput.value;
+            if (!transaction) return;
+            
+            const newBlock = {
+                id: blockchainData.length,
+                data: transaction,
+                hash: generateHash(transaction)
+            };
+            
+            blockchainData.push(newBlock);
+            updateChainVisual();
+            updateLedger(transaction);
+            txInput.value = '';
+        }
+        
+        function generateHash(data) {
+            // Simulate hash generation
+            const hashes = ['000b1c2d...', '000c2d3e...', '000d3e4f...', '000e4f5g...'];
+            return hashes[Math.floor(Math.random() * hashes.length)];
+        }
+        
+        function updateChainVisual() {
+            const chainVisual = document.getElementById('chain-visual');
+            if (!chainVisual) return;
+            chainVisual.innerHTML = '';
+            
+            blockchainData.forEach((block, index) => {
+                const blockDiv = document.createElement('div');
+                blockDiv.className = 'block';
+                blockDiv.innerHTML = `
+                    <div>Block ${block.id}</div>
+                    <div>${block.data}</div>
+                    <div>Hash: ${block.hash}</div>
+                `;
+                chainVisual.appendChild(blockDiv);
+            });
+        }
+        
+        function updateLedger(transaction) {
+            const ledgerEntries = document.getElementById('ledger-entries');
+            if (!ledgerEntries) return;
+            const entryDiv = document.createElement('div');
+            entryDiv.className = 'ledger-entry';
+            entryDiv.innerHTML = `
+                <div class="entry-time">Block ${blockchainData.length - 1}</div>
+                <div class="entry-tx">${transaction}</div>
+                <div class="entry-balance">Updated balances...</div>
+            `;
+            ledgerEntries.appendChild(entryDiv);
+        }
+        
+        function attemptTamper() {
+            const tamperResult = document.getElementById('tamper-result');
+            if (!tamperResult) return;
+            
+            if (blockchainData.length > 1) {
+                tamperResult.innerHTML = `
+                    <div class="result-box" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px;">
+                        <strong>❌ Tampering Detected!</strong> To change Block 1, you would need to:
+                        <br>1. Redo the Proof of Work for Block 1
+                        <br>2. Redo the Proof of Work for Block 2
+                        <br>3. Continue for ALL subsequent blocks
+                        <br><small>This makes the blockchain practically immutable!</small>
+                    </div>
+                `;
+            } else {
+                tamperResult.innerHTML = `
+                    <div class="result-box" style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px;">
+                        <strong>Add a transaction first!</strong> Then try to tamper with the blockchain.
+                    </div>
+                `;
+            }
+        }
+        
+        // Principle 6: Digital Signatures functions
+        let keyPair = null;
+        let currentMessage = '';
+        let currentSignature = '';
+        
+        function generateKeyPair() {
+            keyPair = {
+                privateKey: 'E9873D79C6D87DC0FB6A5778633389F4453213303DA61F20BD67FC233AA33262',
+                publicKey: '03D4B4A4E1D1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF123456'
+            };
+            
+            const privateKeyEl = document.getElementById('private-key');
+            const publicKeyEl = document.getElementById('public-key');
+            if (privateKeyEl) privateKeyEl.textContent = keyPair.privateKey;
+            if (publicKeyEl) publicKeyEl.textContent = keyPair.publicKey;
+        }
+        
+        function signMessage() {
+            if (!keyPair) {
+                alert('Generate a key pair first!');
+                return;
+            }
+            
+            const messageInput = document.getElementById('message-to-sign');
+            if (!messageInput) return;
+            const message = messageInput.value;
+            if (!message) {
+                alert('Enter a message to sign!');
+                return;
+            }
+            
+            currentMessage = message;
+            currentSignature = 'A1B2C3D4E5F6789012345678901234567890ABCDEF1234567890ABCDEF123456789012345678901234567890ABCDEF';
+            
+            const signatureEl = document.getElementById('signature');
+            if (signatureEl) signatureEl.textContent = currentSignature;
+        }
+        
+        function verifySignature() {
+            if (!currentSignature || !currentMessage) {
+                alert('Sign a message first!');
+                return;
+            }
+            
+            const signatureResult = document.getElementById('signature-result');
+            if (signatureResult) {
+                signatureResult.innerHTML = `
+                    <div class="result-box" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px;">
+                        <strong>✅ Signature Valid!</strong> This signature was created with the private key that matches the public key.
+                        <br><small>Anyone can verify this without seeing the private key!</small>
+                    </div>
+                `;
+            }
+        }
+        
+        function simulateInvalidSignature() {
+            const signatureResult = document.getElementById('signature-result');
+            if (signatureResult) {
+                signatureResult.innerHTML = `
+                    <div class="result-box" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px;">
+                        <strong>❌ Invalid Signature!</strong> This signature doesn't match the message or public key.
+                        <br><small>This proves the private key holder didn't authorize this transaction.</small>
+                    </div>
+                `;
+            }
+        }
+        
+        // Principle 7: Economic Incentives functions
+        function calculateProfitability() {
+            const electricityInput = document.getElementById('electricity-cost');
+            const hashRateInput = document.getElementById('hash-rate');
+            if (!electricityInput || !hashRateInput) return;
+            
+            const electricityCost = parseFloat(electricityInput.value);
+            const hashRate = parseFloat(hashRateInput.value);
+            
+            // Simplified calculation
+            const dailyRevenue = (hashRate / 400000000) * 6.40 * 43000; // Very simplified
+            const dailyCost = 24 * 3.5 * electricityCost; // 3.5 kW consumption estimate
+            const dailyProfit = dailyRevenue - dailyCost;
+            
+            const profitabilityResult = document.getElementById('profitability-result');
+            if (profitabilityResult) {
+                profitabilityResult.innerHTML = `
+                    <div class="result-box" style="background: ${dailyProfit > 0 ? '#d4edda' : '#f8d7da'}; color: ${dailyProfit > 0 ? '#155724' : '#721c24'}; padding: 15px; border-radius: 5px;">
+                        <strong>Daily Mining Results:</strong><br>
+                        Revenue: $${dailyRevenue.toFixed(2)}<br>
+                        Electricity Cost: $${dailyCost.toFixed(2)}<br>
+                        Profit: $${dailyProfit.toFixed(2)}<br>
+                        <small>This creates incentive to secure the network!</small>
+                    </div>
+                `;
+            }
+        }
+        
+        // Principle 8: Network Effects functions
+        let networkStats = {
+            users: 1000,
+            miners: 10,
+            security: 'Low',
+            value: 1
+        };
+        
+        function simulateGrowth() {
+            networkStats.users *= 2;
+            networkStats.miners *= 1.5;
+            networkStats.value *= 3;
+            
+            if (networkStats.users > 100000) {
+                networkStats.security = 'High';
+            } else if (networkStats.users > 10000) {
+                networkStats.security = 'Medium';
+            }
+            
+            const usersEl = document.getElementById('users');
+            const minersEl = document.getElementById('miners');
+            const securityEl = document.getElementById('security');
+            const valueEl = document.getElementById('value');
+            
+            if (usersEl) usersEl.textContent = Math.floor(networkStats.users).toLocaleString();
+            if (minersEl) minersEl.textContent = Math.floor(networkStats.miners);
+            if (securityEl) securityEl.textContent = networkStats.security;
+            if (valueEl) valueEl.textContent = '$' + Math.floor(networkStats.value);
+            
+            const growthResult = document.getElementById('growth-result');
+            if (growthResult) {
+                growthResult.innerHTML = `
+                    <div class="result-box" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 5px;">
+                        <strong>🚀 Network Growing!</strong> Notice how all metrics improve together.
+                        <br><small>This positive feedback loop makes Bitcoin stronger over time.</small>
+                    </div>
+                `;
+            }
+        }
+        
+        function resetNetwork() {
+            networkStats = { users: 1000, miners: 10, security: 'Low', value: 1 };
+            const usersEl = document.getElementById('users');
+            const minersEl = document.getElementById('miners');
+            const securityEl = document.getElementById('security');
+            const valueEl = document.getElementById('value');
+            const growthResult = document.getElementById('growth-result');
+            
+            if (usersEl) usersEl.textContent = '1,000';
+            if (minersEl) minersEl.textContent = '10';
+            if (securityEl) securityEl.textContent = 'Low';
+            if (valueEl) valueEl.textContent = '$1';
+            if (growthResult) growthResult.innerHTML = '';
+        }
+        
+        // Principle 9: Scarcity and Sovereignty functions
+        function showScarcityComparison(asset) {
+            const comparisons = {
+                gold: {
+                    title: 'Bitcoin vs Gold',
+                    content: `
+                        <strong>Gold:</strong> ~2% annual inflation (new mining)<br>
+                        <strong>Bitcoin:</strong> Decreasing inflation, approaching 0%<br>
+                        <strong>Advantage:</strong> Bitcoin has a hard cap, gold supply keeps growing
+                    `
+                },
+                land: {
+                    title: 'Bitcoin vs Real Estate',
+                    content: `
+                        <strong>Land:</strong> Can be seized, taxed, requires maintenance<br>
+                        <strong>Bitcoin:</strong> Cannot be seized if properly secured<br>
+                        <strong>Advantage:</strong> True ownership without geographical constraints
+                    `
+                },
+                art: {
+                    title: 'Bitcoin vs Art/Collectibles',
+                    content: `
+                        <strong>Art:</strong> Subjective value, can be counterfeited<br>
+                        <strong>Bitcoin:</strong> Mathematically verifiable scarcity<br>
+                        <strong>Advantage:</strong> Objective, programmable scarcity
+                    `
+                },
+                stocks: {
+                    title: 'Bitcoin vs Stocks',
+                    content: `
+                        <strong>Stocks:</strong> Companies can issue more shares<br>
+                        <strong>Bitcoin:</strong> No entity can create more Bitcoin<br>
+                        <strong>Advantage:</strong> True digital scarcity, no dilution risk
+                    `
+                }
+            };
+            
+            const comparison = comparisons[asset];
+            const scarcityResult = document.getElementById('scarcity-result');
+            if (scarcityResult) {
+                scarcityResult.innerHTML = `
+                    <div class="result-box" style="background: #e7f3ff; color: #004085; padding: 15px; border-radius: 5px;">
+                        <strong>${comparison.title}</strong><br>
+                        ${comparison.content}
+                    </div>
+                `;
+            }
+        }
+        
+        function showSovereigntyExample(type) {
+            const examples = {
+                custody: {
+                    title: 'Self-Custody',
+                    content: `
+                        With Bitcoin, YOU control your wealth directly. No bank can freeze your account, 
+                        no government can seize it without your private keys. You are your own bank.
+                    `
+                },
+                borders: {
+                    title: 'Borderless Value Transfer',
+                    content: `
+                        Send $1 million to Japan or $10 to Nigeria - same process, same low fees. 
+                        No currency controls, no permission needed, settles in ~10 minutes globally.
+                    `
+                },
+                permissionless: {
+                    title: 'No Permission Required',
+                    content: `
+                        No credit checks, no account applications, no minimum balances. 
+                        If you have internet, you can participate in the global Bitcoin economy.
+                    `
+                },
+                censorship: {
+                    title: 'Censorship Resistance',
+                    content: `
+                        No single entity can stop Bitcoin transactions. Even if some countries ban it, 
+                        the network continues operating globally through thousands of nodes.
+                    `
+                }
+            };
+            
+            const example = examples[type];
+            const sovereigntyResult = document.getElementById('sovereignty-result');
+            if (sovereigntyResult) {
+                sovereigntyResult.innerHTML = `
+                    <div class="result-box" style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px;">
+                        <strong>${example.title}</strong><br>
+                        ${example.content}
+                    </div>
+                `;
+            }
+        }
+        
+        // Time preference slider event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeSlider = document.getElementById('time-slider');
+            if (timeSlider) {
+                timeSlider.addEventListener('input', function() {
+                    const years = this.value;
+                    const timeDisplay = document.getElementById('time-display');
+                    if (timeDisplay) timeDisplay.textContent = years + ' years';
+                    
+                    // Simulate inflation effects on fiat vs Bitcoin appreciation
+                    const inflationRate = 0.03; // 3% annually
+                    const bitcoinAppreciation = 0.20; // 20% annually (historical average)
+                    
+                    const fiatValue = 10000 * Math.pow((1 - inflationRate), years);
+                    const btcImpliedValue = 10000 * Math.pow((1 + bitcoinAppreciation), years);
+                    
+                    const fiatValueEl = document.getElementById('fiat-value');
+                    const bitcoinValueEl = document.getElementById('bitcoin-value');
+                    if (fiatValueEl) fiatValueEl.textContent = '$' + Math.floor(fiatValue).toLocaleString();
+                    if (bitcoinValueEl) bitcoinValueEl.textContent = '1 BTC (~$' + Math.floor(btcImpliedValue).toLocaleString() + ')';
+                });
+            }
+        });
+
         // Initialize
         updateProgress();
+        selectMoney('shells'); // Initialize with shells selected
     </script>
 
-</body></html>
+</body>
+</html>
